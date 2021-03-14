@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700&display=swap');
+/*****************
+variables
+*****************/
+$black: #000;
+$orange: #ff8a0e;
+$gray: #404040;
+$lightgray: #f3f3f3;
+$white: #fff;
+$padding: 70px 0;
+$transition: .4s ease;
+$padding: 50px 0;
+/*****************
+basic styles
+*****************/
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: $gray;
+}
+ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: $white;
+    &:hover {
+        color: $white;
+        opacity: .8;
+        transition: $transition;
+    }
+}
+h2 {
+    font-weight: 700;
+    &::after {
+        display: block;
+        content: "";
+        height: 2px;
+        width: 70px;
+        background: $orange;
+        margin: 30px auto;
+    }
+}
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+/*****************
+mixins
+*****************/
+@mixin flex ($justify, $align, $direction) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $direction;
+    flex-wrap: wrap;
+}
+@mixin btn {
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 2px;
+    border: none;
+    color: $white;
+    background: rgba($color: $orange, $alpha: .8);
+    padding: 10px 40px;
+    margin-top: 20px;
+    &:hover {
+        background: $orange;
+        transition: $transition;
+    }
+}
+
+/*****************
+Header
+*****************/
+header {
+    background-image: url(img/header.jpg);
+    background-position: center;
+    background-size: cover;
+    border-bottom: 25px solid rgba(0, 0, 0, .5);
+    height: 60vh;
+    .container {
+        @include flex(center, flex-start, column);
+        height: 60vh;
+        h1 {
+            color: $white;
+            background: $black;
+            font-size: 2rem;
+            font-weight: 700;
+            padding: 10px 20px;
+        }
+        ul {
+            @include flex(space-between, center, row);
+            color: $white;
+            background: $orange;
+            margin-top: 10px;
+            li {
+                margin: 10px 30px;
+                font-weight: 700;
+            }
+        }
+    }
+}
+/*****************
+welcome
+*****************/
+.welcome {
+    text-align: center;
+    background: $lightgray;
+    padding: $padding;
+    .container {
+        h2 {
+            font-size: 2rem;
+        }
+        p {
+            font-weight: 500;
+        }
+    }
+}
+/*****************
+help
+*****************/
+.help {
+    padding: $padding;
+    text-align: center;
+    .container {
+        @include flex(space-between, center, row);
+        article {
+            flex: 0 0 32%;
+            h4 {
+                font-size: 1.2rem;
+                margin-bottom: 20px; 
+            }
+            button {
+                @include btn();
+            }
+        }
+    }
+}
+/*****************
+works
+*****************/
+.works {
+    padding: $padding;
+    text-align: center;
+    .container {
+        padding: 10px 0;
+        @include flex(space-between, center, row);
+        div {
+            flex: 0 0 22%;
+            img {
+                width: 100%;
+            }
+            h3 {
+                padding: 20px 0;
+            }
+            button {
+                @include btn;
+            }
+        }
+    }
+}
+footer {
+    background: $gray;
+    color: $white;
+    text-align: center;
+    padding: $padding;
+    p {
+        span {
+            color: red;
+        }
+    }
+    .icons {
+        padding: 20px 0 0 0;
+        i {
+            color: $white;
+            background: orange;
+            padding: 10px;
+            margin: 0 10px;
+        }
+    }
+}
