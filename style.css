@@ -36,13 +36,14 @@ a:hover {
 }
 
 h2 {
+  font-size: 2.5rem;
   font-weight: 700;
 }
 
 h2::after {
   display: block;
   content: "";
-  height: 2px;
+  height: 3px;
   width: 70px;
   background: #ff8a0e;
   margin: 30px auto;
@@ -51,6 +52,12 @@ h2::after {
 .container {
   width: 80%;
   margin: 0 auto;
+}
+
+@media (max-width: 767px) {
+  .container {
+    width: 90%;
+  }
 }
 
 /*****************
@@ -84,6 +91,12 @@ header .container {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   height: 60vh;
+}
+
+@media (max-width: 767px) {
+  header .container {
+    height: 90vh;
+  }
 }
 
 header .container h1 {
@@ -120,6 +133,12 @@ header .container ul li {
   font-weight: 700;
 }
 
+@media (max-width: 767px) {
+  header .container ul li {
+    margin: 10px 5px;
+  }
+}
+
 /*****************
 welcome
 *****************/
@@ -127,10 +146,6 @@ welcome
   text-align: center;
   background: #f3f3f3;
   padding: 50px 0;
-}
-
-.welcome .container h2 {
-  font-size: 2rem;
 }
 
 .welcome .container p {
@@ -169,8 +184,16 @@ help
           flex: 0 0 32%;
 }
 
+@media (max-width: 767px) {
+  .help .container article {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+  }
+}
+
 .help .container article h4 {
-  font-size: 1.2rem;
+  font-size: 2rem;
   margin-bottom: 20px;
 }
 
@@ -182,7 +205,7 @@ help
   color: #fff;
   background: rgba(255, 138, 14, 0.8);
   padding: 10px 40px;
-  margin-top: 20px;
+  margin: 20px 0;
 }
 
 .help .container article button:hover {
@@ -197,10 +220,10 @@ works
 .works {
   padding: 50px 0;
   text-align: center;
+  background: #f3f3f3;
 }
 
 .works .container {
-  padding: 10px 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -219,9 +242,18 @@ works
 }
 
 .works .container div {
+  padding-top: 30px;
   -webkit-box-flex: 0;
       -ms-flex: 0 0 22%;
           flex: 0 0 22%;
+}
+
+@media (max-width: 767px) {
+  .works .container div {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+  }
 }
 
 .works .container div img {
@@ -230,6 +262,7 @@ works
 
 .works .container div h3 {
   padding: 20px 0;
+  font-size: 2rem;
 }
 
 .works .container div button {
@@ -240,7 +273,7 @@ works
   color: #fff;
   background: rgba(255, 138, 14, 0.8);
   padding: 10px 40px;
-  margin-top: 20px;
+  margin: 20px 0;
 }
 
 .works .container div button:hover {
@@ -266,7 +299,7 @@ footer .icons {
 
 footer .icons i {
   color: #fff;
-  background: orange;
+  background: #ff8a0e;
   padding: 10px;
   margin: 0 10px;
 }

@@ -37,19 +37,24 @@ a {
     }
 }
 h2 {
+    font-size: 2.5rem;
     font-weight: 700;
     &::after {
         display: block;
         content: "";
-        height: 2px;
+        height: 3px;
         width: 70px;
         background: $orange;
         margin: 30px auto;
     }
 }
+
 .container {
     width: 80%;
     margin: 0 auto;
+    @media (max-width: 767px) {
+        width: 90%;       
+    }
 }
 /*****************
 mixins
@@ -69,13 +74,12 @@ mixins
     color: $white;
     background: rgba($color: $orange, $alpha: .8);
     padding: 10px 40px;
-    margin-top: 20px;
+    margin: 20px 0;
     &:hover {
         background: $orange;
         transition: $transition;
     }
 }
-
 /*****************
 Header
 *****************/
@@ -88,6 +92,9 @@ header {
     .container {
         @include flex(center, flex-start, column);
         height: 60vh;
+        @media (max-width: 767px) {
+         height: 90vh; 
+        }
         h1 {
             color: $white;
             background: $black;
@@ -103,6 +110,9 @@ header {
             li {
                 margin: 10px 30px;
                 font-weight: 700;
+                @media (max-width: 767px){
+                    margin: 10px 5px;
+                }
             }
         }
     }
@@ -115,9 +125,7 @@ welcome
     background: $lightgray;
     padding: $padding;
     .container {
-        h2 {
-            font-size: 2rem;
-        }
+        
         p {
             font-weight: 500;
         }
@@ -133,8 +141,11 @@ help
         @include flex(space-between, center, row);
         article {
             flex: 0 0 32%;
+            @media (max-width: 767px) {
+                flex: 0 0 100%;     
+            }
             h4 {
-                font-size: 1.2rem;
+                font-size: 2rem;
                 margin-bottom: 20px; 
             }
             button {
@@ -149,16 +160,21 @@ works
 .works {
     padding: $padding;
     text-align: center;
+    background: $lightgray;
     .container {
-        padding: 10px 0;
         @include flex(space-between, center, row);
         div {
+            padding-top: 30px;
             flex: 0 0 22%;
+            @media (max-width: 767px) {
+                flex: 0 0 100%;     
+            }
             img {
                 width: 100%;
             }
             h3 {
                 padding: 20px 0;
+                font-size: 2rem;
             }
             button {
                 @include btn;
@@ -180,7 +196,7 @@ footer {
         padding: 20px 0 0 0;
         i {
             color: $white;
-            background: orange;
+            background: $orange;
             padding: 10px;
             margin: 0 10px;
         }
